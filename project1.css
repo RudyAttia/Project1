@@ -87,9 +87,6 @@ button{
     padding: 15px;
     position: relative;
     animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari et Chrome */
-    -o-animation: fadein 2s; /* Opera */
 }
 
 @keyframes fadein {
@@ -100,33 +97,9 @@ button{
         opacity:1;
     }
 }
-@-moz-keyframes fadein { /* sur Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* sur Safari et Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* sur Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .titlepaper{
     width: 135px;
+    height: 22px;
     font-size: 18px;
     position: absolute;
     top: 38px;
