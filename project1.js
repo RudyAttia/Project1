@@ -2,8 +2,9 @@
 var memos = [];
 
 window.onload = function(){
-    document.getElementById('dateform').valueAsDate = new Date();
-    document.getElementById('dateform').min = new Date().toISOString().split("T")[0];
+    var mdate = document.getElementById('dateform')
+    mdate.valueAsDate = new Date();
+    mdate.min = new Date().toISOString().split("T")[0];
     if(JSON.parse(localStorage.getItem("notes")) === null){return}
     var strg_notes = localStorage.getItem("notes");
     memos = JSON.parse(strg_notes);
@@ -49,8 +50,9 @@ function ClearForm() {
     mtitle.value="";
     mtitle.focus();
     document.getElementById("noteform").value = "";
-    document.getElementById('dateform').valueAsDate = new Date();
-    document.getElementById('dateform').min = new Date().toISOString().split("T")[0];
+    var mdate = document.getElementById('dateform');
+    mdate.valueAsDate = new Date();
+    mdate.min = new Date().toISOString().split("T")[0];
     document.getElementById("timeform").value = "";
 }
 
