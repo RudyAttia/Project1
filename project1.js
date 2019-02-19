@@ -37,7 +37,7 @@ function UpdatePaper(indexmemos){
     var paperboard = document.getElementById("paperboard")
     var newpaper = document.createElement("div");
     newpaper.className = "paperc";
-    newpaper.innerHTML = `<i class="far fa-times-circle fa-lg" onclick="DeletePaper(event)"></i>
+    newpaper.innerHTML = `<i class="far fa-times-circle fa-lg" onclick="DeletePaper(event)" title="Delete the task"></i>
                           <h5 class="titlepaper">${memos[indexmemos].title}</h5>
                           <div class="notepaper">${memos[indexmemos].note}</div>
                           <div class="datepaper">${memos[indexmemos].date.substring(8,10)}/${memos[indexmemos].date.substring(5,7)}/${memos[indexmemos].date.substring(0,4)}</div>
@@ -70,7 +70,7 @@ function VerifInfo() {
     var mtime = document.getElementById("timeform").value;
     var bufferverif = "";
     if (mtitle === "" && mnote === "") {
-        bufferverif += "The memo is empty";
+        bufferverif += "The task is empty";
     }
     if (mdate === "") {
         AddAnd();
@@ -85,10 +85,10 @@ function VerifInfo() {
     }
     if (new Date(mdate + datetime) < new Date()) {
         AddAnd();
-        bufferverif += "the date is passed";
+        bufferverif += "the date has passed";
     }
     if (bufferverif !== "") {
-        alert(bufferverif);
+        alert("ERROR: "+bufferverif);
         return 0
     }
     return 1
